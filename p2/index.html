@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+
+<script>
+//Copia de un objeto
+function copiarObjecto(obj) {
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+    var newObj = obj.constructor();
+
+    // Se aplica metodo for 
+    for (var key in obj) {
+        newObj[key] = copiarObjecto(obj[key]);
+    }
+    return newObj;
+	console.log(newObj);
+}
+</script>
+
+<!--jquery-->
+<script src="jquery-3.1.0.min.js"></script>
+</body>
+</html>
